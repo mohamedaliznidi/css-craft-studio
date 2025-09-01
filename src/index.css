@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-slate-900 text-slate-100 antialiased;
+  }
+}
+
+@layer components {
+  .slider-thumb {
+    @apply focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-slate-900;
+  }
+  
+  .slider-thumb::-webkit-slider-thumb {
+    @apply appearance-none w-5 h-5 bg-blue-600 border-2 border-blue-400 rounded-full cursor-pointer transition-all duration-200;
+  }
+  
+  .slider-thumb::-webkit-slider-thumb:hover {
+    @apply bg-blue-500 border-blue-300 shadow-lg;
+  }
+  
+  .slider-thumb::-moz-range-thumb {
+    @apply w-5 h-5 bg-blue-600 border-2 border-blue-400 rounded-full cursor-pointer transition-all duration-200;
+    border: 2px solid #60a5fa;
+  }
+  
+  .slider-thumb::-moz-range-thumb:hover {
+    @apply bg-blue-500 border-blue-300;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-slate-800;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-600 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-slate-500;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .backdrop-blur-glass {
+    backdrop-filter: blur(10px) saturate(180%);
+    -webkit-backdrop-filter: blur(10px) saturate(180%);
+  }
+}
